@@ -1,6 +1,6 @@
 Directory Structure:
 
-`crypto_cli/
+```crypto_cli/
 ├── keys/
 │   ├── public/
 │   └── private/
