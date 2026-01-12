@@ -26,8 +26,12 @@ def main():
     pub_key_path = public_keys[choice]
 
     with open(pub_key_path, "rb") as f:
-        public_key = serialization.load_pem_public_key(f.read())
+        from cryptography.hazmat.backends import default_backend
 
+public_key = serialization.load_pem_public_key(
+    f.read(),
+    backend=default_backend()
+)
     with open(args.file, "rb") as f:
         plaintext = f.read()
 
