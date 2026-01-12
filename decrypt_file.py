@@ -14,9 +14,12 @@ def main():
     private_key_path = f"keys/private/{args.name}_private.pem"
 
     with open(private_key_path, "rb") as f:
+        from cryptography.hazmat.backends import default_backend
+
         private_key = serialization.load_pem_private_key(
             f.read(),
-            password=passphrase
+            password=passphrase,
+            backend=default_backend()
         )
 
     with open(args.file, "rb") as f:
