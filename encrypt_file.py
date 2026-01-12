@@ -28,12 +28,12 @@ def main():
     with open(pub_key_path, "rb") as f:
         from cryptography.hazmat.backends import default_backend
 
-public_key = serialization.load_pem_public_key(
-    f.read(),
-    backend=default_backend()
-)
-    with open(args.file, "rb") as f:
-        plaintext = f.read()
+        public_key = serialization.load_pem_public_key(
+            f.read(),
+            backend=default_backend()
+        )
+            with open(args.file, "rb") as f:
+                plaintext = f.read()
 
     ciphertext = public_key.encrypt(
         plaintext,
