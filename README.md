@@ -1,13 +1,13 @@
 Directory Structure:
 
-crypto_cli/
+`crypto_cli/
 ├── keys/
 │   ├── public/
 │   └── private/
 ├── messages/
 ├── generate_keys.py
 ├── encrypt_file.py
-└── decrypt_file.py
+└── decrypt_file.py`
 
 Usage:
 
